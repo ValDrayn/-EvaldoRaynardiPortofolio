@@ -16,8 +16,23 @@ export const tools: Tools[] = [
     type: "Framework",
   },
   {
+    name: "Express",
+    img: "express",
+    type: "framework",
+  },
+  {
     name: "Flutter",
     img: "flutter",
+    type: "Framework",
+  },
+  {
+    name: "Tailwind CSS",
+    img: "tailwind",
+    type: "Framework",
+  },
+  {
+    name: "Bootstrap",
+    img: "bootstrap",
     type: "Framework",
   },
   {
@@ -56,26 +71,13 @@ export const tools: Tools[] = [
     img: "dart",
     type: "Language",
   },
-  {
-    name: "Express",
-    img: "express",
-    type: "Language",
-  },
+
   {
     name: "MySQL",
     img: "mysql",
     type: "Database",
   },
-  {
-    name: "Tailwind CSS",
-    img: "tailwind",
-    type: "Library",
-  },
-  {
-    name: "Bootstrap",
-    img: "bootstrap",
-    type: "Library",
-  },
+
   {
     name: "Github",
     img: "github",

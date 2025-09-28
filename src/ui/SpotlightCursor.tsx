@@ -1,16 +1,12 @@
 "use client";
 import useSpotlightEffect from "@/hooks/useSpotlightEffect";
 import type { HTMLAttributes } from "react";
-
-// Define an interface for the spotlight configuration
 interface SpotlightConfig {
   radius?: number;
   brightness?: number;
   color?: string;
   smoothing?: number;
 }
-
-// Combine props with potential HTML canvas attributes
 interface SpotlightCursorProps extends HTMLAttributes<HTMLCanvasElement> {
   config?: SpotlightConfig;
 }
@@ -20,7 +16,6 @@ const SpotlightCursor = ({
   className,
   ...rest
 }: SpotlightCursorProps) => {
-  // Provide default configuration if not specified
   const spotlightConfig = {
     radius: 200,
     brightness: 0.15,

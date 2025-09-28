@@ -82,7 +82,7 @@ function Name({ name, onDoFill, textSize }: Props) {
     <Wrapper
       className={cn(
         `inline-block text-main  ${
-          !textSize && "text-[6rem] sm:text-[4rem] md:text-[5rem]"
+          !textSize && "lg:text-[6rem] sm:text-[3rem] md:text-[3rem]"
         } `
       )}
       style={textSize ? { fontSize: `${textSize}rem` } : {}}

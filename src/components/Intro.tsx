@@ -1,8 +1,8 @@
 import Name from "@/ui/Name";
 import profile from "../../public/images/profilepolos.png";
 import rocket from "../../public/images/rocket.png";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "motion/react";
 
 export default function Intro() {
   const [loopNum, setLoopNum] = useState(0);
@@ -17,6 +17,9 @@ export default function Intro() {
   const [finished, setFinished] = useState(false);
   const [isFill, setIsFill] = useState(false);
   const Wrapper: React.ElementType = isFill ? "div" : "span";
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3, once: false });
 
   const period = 2000;
 
@@ -71,46 +74,53 @@ export default function Intro() {
       className="flex items-center w-full justify-center min-h-screen snap-start"
       id="Home"
     >
-      {/* <div className="mx-auto px-4"> */}
-      <div className="flex items-center justify-center">
-        <div className="w-[40%] flex flex-col justify-start">
-          <span className="tracking-wider text-[2rem] leading-tight font-medium">
-            Welcome to my Portofolio
-          </span>
-          <div
-            className={cn(
-              `"text-[6rem] sm:text-[4rem] md:text-[5rem] font-audio font-[700] tracking-wider"`
-            )}
-          >
-            <Wrapper>{`Hi! I'm `}</Wrapper>{" "}
-            {/* {finished ? <Name name={text} /> : text} */}
-            <Name name={text} onDoFill={handleIsFill} />
-          </div>
-          <p className="text-foreground/75 font-medium tracking-wide leading-relaxed text-base md:text-lg text-justify">
-            I’m currently a Frontend Developer and University Student,
-            specializing in creating modern, responsive interfaces. I’m
-            currently expanding my knowledge in backend development to build
-            more complete and scalable applications.
-          </p>
-          {/* <button onClick={() => console.log("Lets go")}>Let's connect </button> */}
-        </div>
-        <div className="w-[40%] p-4 items-center flex justify-center">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full px-6 gap-8">
+        <motion.div
+          ref={ref}
+          initial={{ x: 100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-[40%] flex items-center justify-center md:order-2"
+        >
           <div className="relative group transition-transform duration-300 animate-updown hover:translate-y-5">
             <img
               src={profile}
               alt=""
-              className="rounded-full border-[5px] border-main p-[0.8rem] shadow-[0_0_200px_10px_rgba(255,255,255,0.4)] transition-shadow duration-300 group-hover:shadow-[0_0_250px_20px_rgba(255,255,255,0.8)]"
+              className="w-40 sm:w-52 md:w-auto rounded-full border-[5px] border-main p-[0.8rem] shadow-[0_0_200px_10px_rgba(255,255,255,0.4)] transition-shadow duration-300 group-hover:shadow-[0_0_250px_20px_rgba(255,255,255,0.8)]"
               draggable="false"
             />
             <img
               src={rocket}
               alt=""
-              className="absolute bottom-[-1rem] right-0"
+              className="absolute bottom-[-0.5rem] right-0 w-10 sm:w-14 md:w-20"
             />
           </div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          ref={ref}
+          initial={{ x: -100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-[40%] flex flex-col justify-start text-center md:text-left md:order-1"
+        >
+          <span className="tracking-wider text-xl sm:text-2xl md:text-[2rem] leading-tight font-medium">
+            Welcome to my Portofolio
+          </span>
+
+          <div className="font-audio font-[700] tracking-wider mt-2 text-4xl sm:text-5xl md:text-[5rem]">
+            <Wrapper className="lg:text-[6rem] md:text-[3rem] sm:text-[2rem]">{`Hi! I'm `}</Wrapper>{" "}
+            <Name name={text} onDoFill={handleIsFill} />
+          </div>
+
+          <p className="text-foreground/75 font-medium tracking-wide leading-relaxed text-sm sm:text-base md:text-lg mt-4 text-center md:text-justify">
+            I’m a University Student specializing in Frontend Development,
+            focused on creating modern and responsive interfaces. I’m currently
+            expanding my knowledge in backend development to build more complete
+            and scalable applications.
+          </p>
+        </motion.div>
       </div>
-      {/* </div> */}
     </section>
   );
 }

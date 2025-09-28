@@ -10,7 +10,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
     <div
       className="
     relative p-5 rounded-2xl bg-zinc-800 ring-1 ring-inset ring-zinc-50/5 flex flex-col transition-all duration-300 ease-out 
-    hover:-translate-y-2 hover:bg-zinc-700/60 active:scale-[0.98] hover:shadow-[0_0_20px_1px_rgba(255,255,255,0.8)] mb-28
+    hover:-translate-y-2 hover:bg-zinc-700/60 active:scale-[0.98] hover:shadow-[0_0_20px_1px_rgba(255,255,255,0.8)]
   "
     >
       <figure className="aspect-[4/3] rounded-xl overflow-hidden mb-3">
