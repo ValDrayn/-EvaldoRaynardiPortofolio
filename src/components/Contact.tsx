@@ -27,7 +27,7 @@ const contact2: Contact2[] = [
   },
 ];
 
-function SplitButtons({ closeToast }: ToastContentProps) {
+function CustomToastStyle({ closeToast }: ToastContentProps) {
   return (
     <div className="flex items-center gap-3 justify-between">
       <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">
@@ -50,7 +50,7 @@ function SplitButtons({ closeToast }: ToastContentProps) {
 
 export default function Contact() {
   const notify = () => {
-    toast(SplitButtons, {
+    toast(CustomToastStyle, {
       closeButton: false,
       hideProgressBar: true,
     });
@@ -140,6 +140,7 @@ export default function Contact() {
               </div>
 
               <button
+                type="button"
                 className="w-full bg-main text-zinc-950 font-medium py-3 rounded-lg 
            hover:bg-main/90 active:scale-[0.98] transition"
                 onClick={notify}
