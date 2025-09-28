@@ -140,7 +140,6 @@ export default function Contact() {
               </div>
 
               <button
-                type="submit"
                 className="w-full bg-main text-zinc-950 font-medium py-3 rounded-lg 
            hover:bg-main/90 active:scale-[0.98] transition"
                 onClick={notify}
