@@ -49,7 +49,7 @@ export default function Navbar() {
       className={cn(
         `w-full fixed top-0 left-0 z-50 transition-all duration-300`,
         activeSection !== "Home"
-          ? "py-3 bg-zinc-800/40 backdrop-blur-md shadow-sm"
+          ? "py-2 bg-zinc-800/40 shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -94,7 +94,7 @@ export default function Navbar() {
 
         <div
           className={cn(
-            `fixed inset-0 bg-background/95 backdrop-blur-md z-50 flex flex-col items-center justify-center`,
+            `fixed inset-0 bg-background/95 backdrop-blur-md z-[9999] flex flex-col items-center justify-center`,
             `transition-all duration-300 md:hidden`,
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
