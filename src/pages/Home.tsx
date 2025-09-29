@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div
       className={cn(
-        `h-screen bg-background text-foreground overflow-y-scroll overflow-x-hidden cursor-custom snap-y snap-mandatory`
+        `h-screen bg-background text-foreground overflow-y-scroll overflow-x-hidden cursor-custom snap-y snap-mandatory no-scrollbar`
       )}
     >
       <ThemeToggle />

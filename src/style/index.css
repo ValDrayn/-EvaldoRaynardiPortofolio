@@ -228,12 +228,11 @@ body {
   }
 }
 
-#root {
+/* #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  /* text-align: center; */
-}
+} */
 
 @utility text-glow {
   @apply relative;
@@ -366,4 +365,21 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: -4px -4px 0px var(--color-foreground);
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* IE and Edge */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+  }
+
+  /* Firefox */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
 }

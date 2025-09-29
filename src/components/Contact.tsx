@@ -1,6 +1,7 @@
+import { CustomToastStyle } from "@/ui/CustomToastStyle";
 import Name from "@/ui/Name";
 import { motion } from "motion/react";
-import { toast, type ToastContentProps } from "react-toastify";
+import { toast } from "react-toastify";
 
 type Contact = {
   type: String;
@@ -27,27 +28,6 @@ const contact2: Contact2[] = [
   },
 ];
 
-function CustomToastStyle({ closeToast }: ToastContentProps) {
-  return (
-    <div className="flex items-center gap-3 justify-between">
-      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">
-        i
-      </div>
-      <div className="flex flex-col">
-        <h3 className="text-blue-800 text-sm font-semibold">Information</h3>
-        <p className="text-sm text-blue-700">Service is under maintenance</p>
-      </div>
-
-      <button
-        onClick={() => closeToast()}
-        className="ml-8 text-blue-600 hover:text-blue-800 transition"
-      >
-        ✕
-      </button>
-    </div>
-  );
-}
-
 export default function Contact() {
   const notify = () => {
     toast(CustomToastStyle, {
@@ -57,10 +37,10 @@ export default function Contact() {
   };
   return (
     <section
-      className="min-h-screen flex flex-col justify-between text-foreground snap-start"
+      className="min-h-screen flex flex-col justify-between text-foreground snap-start px-8"
       id="Contact"
     >
-      <div className="flex-grow flex items-center justify-center py-16">
+      <div className="flex-grow flex items-center justify-center pb-16 pt-20">
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 text-center lg:text-left">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -70,7 +50,7 @@ export default function Contact() {
             className="flex flex-col justify-center items-center lg:items-start"
           >
             <h2 className="mb-4">
-              <Name name={"Let’s-Connect"} textSize={"3"} />
+              <Name name={"Let’s-Connect"} textSize={3} />
             </h2>
             <p className="text-muted-foreground mb-8 max-w-md">
               Feel free to reach out using the form or my social links below.
@@ -104,10 +84,7 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 
-             text-foreground placeholder:text-foreground placeholder:opacity-100
-             focus:border-main focus:ring-2 focus:ring-main/50 
-             outline-none transition"
+                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 text-foreground placeholder:text-foreground placeholder:opacity-100focus:border-main focus:ring-2 focus:ring-main/50 outline-none transition"
                 />
               </div>
 
@@ -118,10 +95,7 @@ export default function Contact() {
                 <input
                   type="email"
                   placeholder="your@email.com"
-                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 
-             text-foreground placeholder:text-foreground placeholder:opacity-100
-             focus:border-main focus:ring-2 focus:ring-main/50 
-             outline-none transition"
+                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 text-foreground placeholder:text-foreground placeholder:opacity-100focus:border-main focus:ring-2 focus:ring-main/50 outline-none transition"
                 />
               </div>
 
@@ -132,17 +106,13 @@ export default function Contact() {
                 <textarea
                   rows={5}
                   placeholder="Write your message..."
-                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 
-             text-foreground placeholder:text-foreground placeholder:opacity-100
-             focus:border-main focus:ring-2 focus:ring-main/50 
-             outline-none transition"
+                  className="w-full rounded-lg bg-muted border border-border px-4 py-3 text-foreground placeholder:text-foreground placeholder:opacity-100 focus:border-main focus:ring-2 focus:ring-main/50 outline-none transition"
                 ></textarea>
               </div>
 
               <button
                 type="button"
-                className="w-full bg-main text-zinc-950 font-medium py-3 rounded-lg 
-           hover:bg-main/90 active:scale-[0.98] transition"
+                className="w-full bg-main text-zinc-950 font-medium py-3 rounded-lg hover:bg-main/90 active:scale-[0.98] transition"
                 onClick={notify}
               >
                 Send Message

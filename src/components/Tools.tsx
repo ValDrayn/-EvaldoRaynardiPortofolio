@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Tools() {
   return (
     <section
-      className="min-h-screen w-full flex items-center justify-center flex-col snap-start"
+      className="min-h-screen w-full flex items-center justify-center flex-col snap-start p-8"
       id="Tools"
     >
       <motion.h1
@@ -14,9 +14,9 @@ export default function Tools() {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-4xl/snug font-[800] text-foreground mb-4"
+        className="text-4xl/snug font-[800] text-foreground mb-4 pt-20"
       >
-        <Name name={"Tools"} textSize={"4"} />
+        <Name name={"Tools"} textSize={4} />
       </motion.h1>
 
       <motion.p

@@ -47,12 +47,13 @@ export default function Navbar() {
   return (
     <div
       className={cn(
-        `w-full fixed z-60 transition-all duration-300`,
-        scrolled ? "py-3 bg-background/60 backdrop-blur-md shadow-xs" : "py-5"
+        `w-full fixed top-0 left-0 z-50 transition-all duration-300`,
+        activeSection !== "Home"
+          ? "py-3 bg-zinc-800/40 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo */}
         <a
           href="#Home"
           className="text-xl font-bold text-main flex items-center"
@@ -62,7 +63,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <a
@@ -80,7 +80,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-80"
@@ -93,7 +92,6 @@ export default function Navbar() {
           )}
         </button>
 
-        {/* Mobile Menu */}
         <div
           className={cn(
             `fixed inset-0 bg-background/95 backdrop-blur-md z-50 flex flex-col items-center justify-center`,

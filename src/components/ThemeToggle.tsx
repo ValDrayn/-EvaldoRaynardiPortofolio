@@ -59,7 +59,7 @@ export default function ThemeToggle() {
       <button
         onClick={toggleTheme}
         className={cn(
-          `hidden lg:block fixed top-[0.75rem] right-5 z-100 p-2 rounded-full hover:bg-muted transition-colors duration-500 `
+          `hidden lg:block fixed top-[0.5rem] right-3 z-100 p-2 rounded-full hover:bg-muted transition-colors duration-500 `
         )}
       >
         {isDark ? (

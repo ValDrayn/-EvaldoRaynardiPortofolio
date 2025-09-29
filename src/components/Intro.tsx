@@ -74,19 +74,19 @@ export default function Intro() {
       className="flex items-center w-full justify-center min-h-screen snap-start"
       id="Home"
     >
-      <div className="flex flex-col md:flex-row items-center justify-center w-full px-6 gap-8">
+      <div className="flex md:max-[920px]:flex-col flex-col md:flex-row items-center justify-center w-full px-6 gap-8">
         <motion.div
           ref={ref}
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-[40%] flex items-center justify-center md:order-2"
+          className="w-full md:w-[40%] flex items-center justify-center md:order-2 md:max-[920px]:order-1 "
         >
           <div className="relative group transition-transform duration-300 animate-updown hover:translate-y-5">
             <img
               src={profile}
               alt=""
-              className="w-40 sm:w-52 md:w-auto rounded-full border-[5px] border-main p-[0.8rem] shadow-[0_0_200px_10px_rgba(255,255,255,0.4)] transition-shadow duration-300 group-hover:shadow-[0_0_250px_20px_rgba(255,255,255,0.8)]"
+              className="w-40 sm:w-52 md:max-[920px]:w-52 md:w-auto rounded-full border-[5px] border-main p-[0.8rem] shadow-[0_0_200px_10px_rgba(255,255,255,0.4)] transition-shadow duration-300 group-hover:shadow-[0_0_250px_20px_rgba(255,255,255,0.8)]"
               draggable="false"
             />
             <img
@@ -102,18 +102,18 @@ export default function Intro() {
           initial={{ x: -100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-[40%] flex flex-col justify-start text-center md:text-left md:order-1"
+          className="w-full md:w-[40%] flex flex-col justify-start text-center md:text-left md:order-1 md:max-[920px]:order-2 md:max-[920px]:text-center md:max-[920px]:w-[80%]"
         >
-          <span className="tracking-wider text-xl sm:text-2xl md:text-[2rem] leading-tight font-medium">
+          <span className="tracking-wider text-xl sm:text-2xl md:text-[2rem] leading-tight font-medium md:max-[920px]:text-xl">
             Welcome to my Portofolio
           </span>
 
-          <div className="font-audio font-[700] tracking-wider mt-2 text-4xl sm:text-5xl md:text-[5rem]">
-            <Wrapper className="lg:text-[6rem] md:text-[3rem] sm:text-[2rem]">{`Hi! I'm `}</Wrapper>{" "}
-            <Name name={text} onDoFill={handleIsFill} />
+          <div className="font-audio font-[700] tracking-wider mt-2 text-4xl sm:text-5xl md:text-[5rem] md:max-[920px]:text-5xl">
+            <Wrapper className="lg:text-[5rem] md:text-[3.5rem] sm:text-[3rem] text-[3rem] lg:max-[1175px]:text-[3.5rem]">{`Hi! I'm `}</Wrapper>{" "}
+            <Name name={text} onDoFill={handleIsFill} textSize={6} />
           </div>
 
-          <p className="text-foreground/75 font-medium tracking-wide leading-relaxed text-sm sm:text-base md:text-lg mt-4 text-center md:text-justify">
+          <p className="text-foreground/75 font-medium tracking-wide leading-relaxed text-sm lg:text-lg md:text-md sm:text-base mt-4 text-center md:text-justify md:max-[920px]:font-medium md:max-[920px]:text-sm md:max-[920px]:leading-relaxed md:max-[920px]:text-center">
             I’m a University Student specializing in Frontend Development,
             focused on creating modern and responsive interfaces. I’m currently
             expanding my knowledge in backend development to build more complete

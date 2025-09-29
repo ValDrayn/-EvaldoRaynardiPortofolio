@@ -6,8 +6,8 @@ const DURATION = 0.25;
 const STAGGER = 0.025;
 
 type Props = {
-  name: String;
-  textSize?: String;
+  name: string;
+  textSize?: number; // ubah ke number biar gampang
   onDoFill?: (bool: boolean) => void;
 };
 
@@ -78,15 +78,15 @@ function Name({ name, onDoFill, textSize }: Props) {
     if (onDoFill) onDoFill(parts[1] ? true : false);
   }, [parts[1], onDoFill]);
 
+  const responsiveTextSize =
+    textSize === 4
+      ? "text-[3.5rem] sm:text-[4rem] md:text-[4rem] lg:text-[4rem]"
+      : textSize === 3
+      ? "text-[2.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3rem]"
+      : "text-[3rem] sm:text-[3rem] lg:max-[1175px]:text-[3.5rem] md:text-[3.5rem] lg:text-[5rem]";
+
   return (
-    <Wrapper
-      className={cn(
-        `inline-block text-main  ${
-          !textSize && "lg:text-[6rem] sm:text-[3rem] md:text-[3rem]"
-        } `
-      )}
-      style={textSize ? { fontSize: `${textSize}rem` } : {}}
-    >
+    <Wrapper className={cn(`inline-block text-main ${responsiveTextSize}`)}>
       <FlipLink href="#" classNames="font-audio">
         {parts[0] || ""}
       </FlipLink>
@@ -95,10 +95,6 @@ function Name({ name, onDoFill, textSize }: Props) {
           {parts[1] || ""}
         </FlipLink>
       )}
-
-      {/* <span className="w-[2px] h-[1rem] bg-red-400 text-red-400 rounded-2xl animate-fading">
-        I
-      </span> */}
     </Wrapper>
   );
 }
