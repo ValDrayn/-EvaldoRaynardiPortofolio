@@ -14,15 +14,15 @@ const navItems: NavItem[] = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setIsScrolled] = useState(false);
+  // const [scrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
+    // const handleScroll = () => {
+    //   setIsScrolled(window.scrollY > 10);
+    // };
+    // window.addEventListener("scroll", handleScroll);
 
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -39,7 +39,7 @@ export default function Navbar() {
     sections.forEach((section) => observer.observe(section));
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      // window.removeEventListener("scroll", handleScroll);
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
