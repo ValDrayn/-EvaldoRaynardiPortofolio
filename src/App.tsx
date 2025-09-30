@@ -5,6 +5,7 @@ import SpotlightCursor from "./ui/SpotlightCursor";
 import { ToastContainer } from "react-toastify";
 import ContextPool from "./utils/Contextpool";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,9 @@ const AppRoutes = () => {
 };
 
 function App() {
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <AppRoutes />

@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 export default function Tools() {
   return (
     <section
-      className="min-h-screen w-full flex items-center justify-center flex-col snap-start p-8"
       id="Tools"
+      className="min-h-screen w-full flex items-center justify-center flex-col snap-start p-8 pb-20"
     >
       <motion.h1
         initial={{ y: -30, opacity: 0 }}

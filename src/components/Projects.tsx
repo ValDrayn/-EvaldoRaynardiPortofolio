@@ -30,7 +30,7 @@ export default function Project() {
   return (
     <section
       id="Projects"
-      className="flex justify-center items-center min-h-screen snap-start"
+      className="flex justify-center items-center min-h-screen snap-start pb-20"
     >
       <motion.div
         className="w-[80%] flex flex-col items-center pt-20"
