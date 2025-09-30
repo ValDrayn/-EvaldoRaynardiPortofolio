@@ -47,7 +47,7 @@ export default function Navbar() {
   return (
     <div
       className={cn(
-        `w-full fixed top-0 left-0 z-50 transition-all duration-300`,
+        `w-full fixed top-0 left-0 z-[50] transition-all duration-300`,
         activeSection !== "Home"
           ? "py-2 bg-zinc-800/40 shadow-sm"
           : "bg-transparent"
@@ -82,7 +82,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-80"
+          className="md:hidden p-2 text-foreground z-[150]"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
           {isMenuOpen ? (
@@ -94,7 +94,7 @@ export default function Navbar() {
 
         <div
           className={cn(
-            `fixed inset-0 bg-background/95 backdrop-blur-md z-[9999] flex flex-col items-center justify-center`,
+            `fixed inset-0 bg-background/95 backdrop-blur-md z-[98] flex flex-col items-center justify-center`,
             `transition-all duration-300 md:hidden`,
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
